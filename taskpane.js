@@ -66,7 +66,7 @@ async function createTaskFromEmail() {
       status('Flow returned error: ' + resp.status + ' - ' + txt);
       return;
     }
-      status('Sent successfully: ' + resp.status);
+      status('Sent successfully');
   } catch (err) {
     status('Error: ' + (err.message || JSON.stringify(err)));
   }
