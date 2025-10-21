@@ -66,19 +66,6 @@ async function createTaskFromEmail() {
       status('Flow returned error: ' + resp.status + ' - ' + txt);
       return;
     }
-
-    const result = await resp.json();
-    status('Task created. Opening...');
-
-    // Open the record URL returned by flow
-    const taskUrl = result.taskUrl;
-    if (taskUrl) {
-      // open in a new window (works in OWA and desktop)
-      window.open(taskUrl, '_blank');
-    } else {
-      status('Created: ' + result.taskId);
-    }
-
   } catch (err) {
     status('Error: ' + (err.message || JSON.stringify(err)));
   }
